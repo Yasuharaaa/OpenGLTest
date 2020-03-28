@@ -1,0 +1,46 @@
+newmtl Model001_Material001
+map_Kd A2_Body_D.png
+map_bump A2_Body_n.png
+
+newmtl Model001_Material002
+map_Kd A2_Body_D.png
+map_bump A2_Body_n.png
+
+newmtl Model001_Material003
+map_Kd A2_Body_D.png
+map_bump A2_Body_n.png
+
+newmtl Model001_Material004
+map_Kd A2_Body_D.png
+map_bump A2_Body_n.png
+
+newmtl Model001_Material005
+map_Kd A2_Face_D.png
+map_bump A2_Face_n.png
+
+newmtl Model001_Material006
+map_Kd A2_Face_D.png
+map_bump A2_Face_n.png
+
+newmtl Model001_Material007
+map_Kd A2_Face_D.png
+map_bump A2_Face_n.png
+
+newmtl Model001_Material008
+map_Kd A2_Face_D.png
+map_bump A2_Face_n.png
+
+newmtl Model001_Material009
+map_Kd A2_Hair2_D.png
+map_bump A2_Hair2_n.png
+
+newmtl Model001_Material010
+map_Kd A2_Eye_M.png
+map_bump A2_Face_N.png
+
+newmtl Model001_Material011
+map_Kd A2_Face_D.png
+
+newmtl Model001_Material012
+map_Kd A2_Hair1_D.png
+
