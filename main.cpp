@@ -106,8 +106,9 @@ int main()
     
     // shaders
     //Shader* shader = new Shader("./Shaders/reflectShader.vert", "./Shaders/reflectShader.frag");
-    Shader* shader = new Shader("./Shaders/explodeVertex.vert", "./Shaders/explodeFragment.frag", "./Shaders/explodeGeom.geom");
-    //Shader* shader = new Shader("./Shaders/explodeVertex.vert", "./Shaders/explodeFragment.frag");
+    //Shader* shader = new Shader("./Shaders/explodeVertex.vert", "./Shaders/explodeFragment.frag", "./Shaders/explodeGeom.geom");
+    Shader* shader = new Shader("./Shaders/explodeVertex.vert", "./Shaders/explodeFragment.frag");
+    Shader* furShader = new Shader("./Shaders/furV.vert", "./Shaders/furF.frag", "./Shaders/furG.geom");
     //Shader* explodeShader = new Shader("./Shaders/explodeShader.vert", "./Shaders/explodeFragment.frag");
     Shader* houseShader = new Shader("./Shaders/houseVertex.vert", "./Shaders/house.frag", "./Shaders/houseGemo.geom");
     Shader* skybox_shader = new Shader("./Shaders/skybox_shader.vert", "./Shaders/skybox_shader.frag");
@@ -498,6 +499,16 @@ int main()
         //material->shader->use();
         Solider.Draw(material->shader);
         
+        furShader->use();
+        proj_mat = glm::perspective(glm::radians(45.0f), (float)(width)/(float)(height), 0.1f, 100.f);
+        projLoc = glGetUniformLocation(furShader->ID, "projection");
+        glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj_mat));
+        viewLoc = glGetUniformLocation(furShader->ID, "view");
+        view_mat = camera.GetViewMatrix();
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view_mat));
+        modelLoc = glGetUniformLocation(furShader->ID, "model");
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model_mat));
+        Solider.Draw(furShader);
         // 绘制天空盒
         // -----------------
         glDepthMask(GL_FALSE);
